@@ -13,16 +13,27 @@ import java.util.Properties;
 
 public class Service {
 
-    private static final String QUEUE_NAME = "db_changes";
+    private static final String QUEUE_NAME = System.getenv("QUEUE_NAME");
     private static final String RABBITMQ_HOST = System.getenv("RABBITMQ_HOST");
-    private static final String PG_LISTEN_CHANNEL = "data_changes";
+    private static final String PG_LISTEN_CHANNEL = System.getenv("PG_LISTEN_CHANNEL");
     private static final String POSTGRES_URL = System.getenv("POSTGRES_URL");;
     public static final String RABBITMQ_USERNAME = System.getenv("RABBITMQ_USERNAME");
     public static final String RABBITMQ_PASSWORD = System.getenv("RABBITMQ_PASSWORD");
 
+//    private static final String QUEUE_NAME = "metadata_changes";
+//    private static final String RABBITMQ_HOST = "localhost";
+//    private static final String PG_LISTEN_CHANNEL = "data_changes";
+//    private static final String POSTGRES_URL = "jdbc:postgresql://localhost:5432/metadata";
+//    public static final String RABBITMQ_USERNAME = "guest";
+//    public static final String RABBITMQ_PASSWORD = "guest";
     public static void main(String[] args) {
         try {
-
+//            System.out.println("QUEUE_NAME: " + QUEUE_NAME);
+//            System.out.println("RABBITMQ_HOST: " + RABBITMQ_HOST);
+//            System.out.println("PG_LISTEN_CHANNEL: " + PG_LISTEN_CHANNEL);
+//            System.out.println("POSTGRES_URL: " + POSTGRES_URL);
+//            System.out.println("RABBITMQ_USERNAME: " + RABBITMQ_USERNAME);
+//            System.out.println("RABBITMQ_PASSWORD: " + RABBITMQ_PASSWORD);
             Properties props = new Properties();
             props.setProperty("user", "postgres");
             props.setProperty("password", "postgres");
